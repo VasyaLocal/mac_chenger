@@ -12,7 +12,7 @@ def get_arguments():
         parser.error("[-] Неверный MAC адрес ПРИМЕР:(00:11:22:33:44:55)")
     return  options
 
-def change_mac(interface, new_mac):
+    def change_mac(interface, new_mac):
     print("[+] Для интерфейса " + interface + " присвоен новый MAC адрес: " + new_mac)
     subprocess.call(["ifconfig", interface, "down"])
     subprocess.call(["ifconfig", interface, "hw", "ether", new_mac])
